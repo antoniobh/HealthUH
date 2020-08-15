@@ -1,0 +1,214 @@
+*{
+  list-style: none;
+  text-decoration: none;
+}
+
+main{
+  height:100vh;
+  margin: 0 auto;
+  display: block;
+}
+
+aside{
+  display: block;
+  float: left;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 80px;
+}
+
+
+nav{
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  min-height: 100%;
+  background: #242e42;
+}
+
+nav ul{
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  margin-top: 35px;
+  padding: 0px;
+}
+
+nav ul li{
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+nav ul li a{
+  display: block;
+  margin: 0;
+  padding: 10px 0px 10px 0px;
+  border-left: 4px solid transparent;
+}
+
+nav ul li span{
+  display: none;
+  position: absolute;
+  border-radius: 0px;
+  text-align: center;
+  padding: 2px;
+  left: calc(100% + 10px);
+  width: 100px;
+  z-index: 1;
+  color: white;
+  background: #1d2636;
+  margin: 16px 0px 0px 10px;
+  opacity: 0.9;
+
+  animation-duration: 0.6s;
+  animation-name: tooltip;
+}
+
+
+nav ul li span::before{
+  content: " ";
+  width: 10px;
+  height: 10px;
+  z-index: 2;
+  position: absolute;
+  left: -15.5px;
+  top: 6px;
+  border-right: 8px solid #1d2636;
+  border-top: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+nav ul li:hover > span{
+  display: block;
+}
+
+
+@keyframes tooltip {
+  from {
+    margin-top: -16px;
+    opacity: 0;
+  }
+
+  to {
+    margin-top: 16px;
+    opacity: 0.9;
+  }
+}
+
+nav ul li a.active{
+  border-left: 4px solid #00b9eb;
+  background: #1d2636;
+}
+nav ul li a:hover{
+ display: block;
+ margin: 0;
+ padding: 10px 0px 10px 0px;
+ background: #1d2636;
+}
+
+nav ul li a img{
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+  padding: 2px;
+}
+
+
+.mainPanel{
+  display: block;
+  margin: 0 auto;
+  height: 100vh;
+  background: red;
+}
+
+
+.app{
+  display: block;
+  float: left;
+  min-height:100vh;
+  width: calc(100% - 80px);
+  margin-left: 80px;
+  background: #e9ebee;
+
+}
+
+.app header{
+  position: fixed;
+  width: 100%;
+}
+.app header img{
+  display: block;
+  margin: 10px auto;
+}
+
+.app .content{ margin: 90px 0px 85px 0px; padding: 30px;}
+
+.app header{
+  background: white;
+  height: 80px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    aside{
+      position: fixed;
+      height: 80px;
+      width: 100%;
+      top: calc(100% - 80px);
+    }
+
+    nav ul{
+      flex-direction: row;
+      background: #242e42;
+      margin: 0px;
+    }
+
+    nav ul li{
+      flex: 1 auto;
+      width: 100px;
+    }
+    nav ul li a img{
+      margin-top: 10px;
+      width: 27px;
+      height: 27px;
+      padding: 0px;
+    }
+    nav ul li a{
+      padding: 0 auto;
+      margin: 0 auto;
+      border-bottom: 4px solid transparent;
+      border-left: none;
+      height: 100%;
+    }
+    nav ul li span::before{display: none}
+
+    nav ul li span{
+      display: none;
+    }
+
+    .app .content{
+      padding: 10px;
+    }
+    .app{
+      width: calc(10px);
+      left: 0px;
+      margin: 0px;
+      width: 100%;
+    }
+
+    nav ul li a.active{
+      border-bottom: 4px solid #00b9eb;
+      border-left: none;
+      background: #1d2636;
+    }
+}
