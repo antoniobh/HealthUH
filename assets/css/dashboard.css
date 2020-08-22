@@ -144,6 +144,7 @@ nav ul li a img{
 
 .app header{
   position: fixed;
+  z-index: 9;
   width: 100%;
 }
 .app header img{

@@ -87,7 +87,7 @@ class HealthUH{
 
   UserLoggedGuard(){
     if(!this.isLogged){
-      window.location="index.html";
+      window.location="../index.html";
     }
   }
 }
