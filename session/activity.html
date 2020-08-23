@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <title>HealthUH | Dashboard</title>
+</head>
+<body>
+  <main>
+    <aside>
+      <nav>
+        <ul>
+
+          <li>
+            <span>Perfil</span>
+            <a href="./index.html">
+              <img src="../assets/images/user-circle-solid.svg" alt="">
+          </a></li>
+
+
+          <li>
+            <span>Actividad</span>
+            <a href="./activity.html" class="active">
+              <img src="../assets/images/running-solid.svg" alt="">
+          </a></li>
+          <li>
+            <span>Sueño</span>
+            <a href="./sleep.html">
+              <img src="../assets/images/bed-solid.svg" alt="">
+          </a></li>
+          <li>
+            <span>Nutricion</span>
+            <a href="./nutrition.html">
+              <img src="../assets/images/utensils-solid.svg" alt="">
+          </a></li>
+          <li id="signOut">
+            <span>Cerrar Session</span>
+            <a href="#">
+              <img src="../assets/images/sign-out.svg" alt="">
+            </a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="mainPanel">
+      <div class="app">
+        <div class="bg-banner activity-bg"></div>
+        <div class="content">
+          <div class="container">
+
+            <div class="row" style="margin-top: 150px;">
+              <div class="col-md-12">
+                <form>
+                  <h4 class="mb-3">Actividad</h4>
+
+                  <div class="row">
+                    <div class="col-md-4 mb-3">
+                      <label for="walk">Distancia de Caminata</label>
+                      <input type="text" class="form-control" id="walk" placeholder="" value="" >
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label for="steeps">Pasos</label>
+                      <input type="text" class="form-control" id="steeps" placeholder="" value="" >
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label for="floor">Pisos subidos</label>
+                      <input type="text" class="form-control" id="floor" placeholder="" value="" >
+                    </div>
+                  </div>
+
+                  <hr class="mb-4">
+
+                  <button id="save" class="btn btn-primary btn-lg btn-block" type="button">Actualizar informacion</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+  <script src="../assets/js/HealthUH.js" charset="utf-8"></script>
+  <script src="../assets/js/activity.js" charset="utf-8"></script>
+</body>
+</html>

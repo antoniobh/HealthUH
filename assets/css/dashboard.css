@@ -17,6 +17,7 @@ aside{
   bottom: 0;
   height: 100vh;
   width: 80px;
+  z-index: 100;
 }
 
 
@@ -89,6 +90,60 @@ nav ul li span::before{
 
 nav ul li:hover > span{
   display: block;
+}
+
+.imgProfile{
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: white;
+  border-radius: 25rem;
+}
+
+
+.imgProfile img{
+    width: inherit;
+}
+
+.bg-banner{
+  width: inherit;
+  position: absolute;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+    .profile-bg{
+      background-image: url(https://fpcover.cdnpk.net/image/20191115123221.jpg);
+    }
+    .activity-bg{
+      background-image: url('../images/activity.jpg');
+      background-position: bottom;  
+    }
+
+.rounderBorder{
+  border: 2px solid white;
+}
+
+.bg-banner::after{
+  content: " ";
+  background: #000;
+  opacity: 0.6;
+  width: 100%;
+  height: inherit;
+  position: absolute;
+}
+
+
+.profile-selectPicture{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 25rem;
+  opacity: 0;
+  cursor: pointer;
+  top: 200px;
 }
 
 

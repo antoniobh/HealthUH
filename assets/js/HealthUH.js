@@ -6,12 +6,7 @@ class HealthUH{
   }
 
  setDefaultUsers(){
-    this.addUser(
-      {
-        'user':'user',
-        'password':'password'
-      }
-    )
+    this.addUser('user','password')
   }
 
   updateAppUsers(){
@@ -20,6 +15,10 @@ class HealthUH{
 
   setActiveUser(data){
     localStorage.setItem('ActiveUser',JSON.stringify(data))
+  }
+
+  getActiveUser(){
+    return localStorage.getItem("ActiveUser")
   }
 
   setLogInStatus(status){
@@ -34,11 +33,34 @@ class HealthUH{
     }
   }
 
+  existsUserList(){
+    if(localStorage.getItem("AppUsers") === null){
+      return false;
+    }else{
+      return true;
+    }
+  }
+
   destroySession(){
     this.setLogInStatus(false);
     localStorage.removeItem('ActiveUser')
     this.UserLoggedGuard();
   }
+
+  getParsedJSON(){
+    let k = JSON.parse(localStorage.getItem('AppUsers'))
+    return k;
+  }
+
+  syncStates(){
+    let promise = new Promise((resolve, reject) => {
+      this.AppUsers = JSON.parse(localStorage.getItem('AppUsers'))
+    });
+    return promise;
+  }
+
+
+
 
   addUser(user, password){
     this.AppUsers.Users.push(
@@ -52,7 +74,8 @@ class HealthUH{
                     'sexo':'',
                     'GrupoSanguineo':'',
                     'EscalaFitzPatric':'',
-                    'sillaDeRuedas':''
+                    'sillaDeRuedas':'',
+                    'picture':'../assets/images/user.svg'
                   },
                   Medidas:{
                     'Estatura':'',
@@ -66,6 +89,22 @@ class HealthUH{
                     'DistanciaCaminata':'',
                     'Pasos':'',
                     'Pisossubidos':''
+                  },
+                  Nutricion:{
+                    'AcidoFolico':'',
+                    'Agua':'',
+                    'AzucarEnDieta':'',
+                    'Biotona':'',
+                    'Cafeina':'',
+                    'Calcio':'',
+                    'Carbohidratos':'',
+                    'Cloro':'',
+                    'Cobre':'',
+                    'ColesterolEnDieta':'',
+                    'Cromo':''
+                  },
+                  Sueño:{
+                    'horas':''
                   }
                 }
     }
@@ -75,8 +114,8 @@ class HealthUH{
 
   login(user, password){
     for (var i = 0; i < this.AppUsers.Users.length; i++) {
-        if(this.AppUsers.Users[i].user.user == user && this.AppUsers.Users[i].user.password == password){
-          this.setActiveUser({active:this.AppUsers.Users[i]});
+        if(this.AppUsers.Users[i].user == user && this.AppUsers.Users[i].password == password){
+          this.setActiveUser(i);
           this.setLogInStatus(true);
           return true;
         }
@@ -84,10 +123,25 @@ class HealthUH{
     return false;
   }
 
-
   UserLoggedGuard(){
     if(!this.isLogged){
-      window.location="../index.html";
+      window.location="../../index.html";
     }
   }
+
+  UserLoginGuard(){
+    if(document.getElementById('signOut')=== null && HealthUHApp.getUserStatus()){
+      window.location="../../session/index.html";
+    }
+  }
+
+}
+
+
+
+if(document.getElementById('signOut')!== null){
+  document.getElementById('signOut').addEventListener('click',function(){
+    let HealthUHApp = new HealthUH();
+    HealthUHApp.destroySession();
+  })
 }
