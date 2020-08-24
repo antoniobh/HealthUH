@@ -53,12 +53,12 @@ class HealthUH{
   }
 
   syncStates(){
-    let promise = new Promise((resolve, reject) => {
-      this.AppUsers = JSON.parse(localStorage.getItem('AppUsers'))
-    });
-    return promise;
-  }
 
+    return new Promise((resolve, reject) =>{
+      this.AppUsers = JSON.parse(localStorage.getItem('AppUsers'));
+        resolve()
+    })
+  }
 
 
 
@@ -71,40 +71,41 @@ class HealthUH{
                   data:{
                     'nombre':'',
                     'apellido':'',
-                    'sexo':'',
+                    'fechaNacimiento':'',
+                    'sexo':false,
                     'GrupoSanguineo':'',
                     'EscalaFitzPatric':'',
-                    'sillaDeRuedas':'',
+                    'sillaDeRuedas':false,
                     'picture':'../assets/images/user.svg'
                   },
                   Medidas:{
-                    'Estatura':'',
-                    'Peso':'',
-                    'circunferenciaDeLaCintura':'',
-                    'IMC':'',
-                    'MasaCorporalMagra':'',
-                    'PorcentajeMasaCoporal':''
+                    'Estatura':'0',
+                    'Peso':'0',
+                    'circunferenciaDeLaCintura':'0',
+                    'IMC':'0',
+                    'MasaCorporalMagra':'0',
+                    'PorcentajeGrasaCoporal':'0'
                   },
                   Actividad:{
-                    'DistanciaCaminata':'',
-                    'Pasos':'',
-                    'Pisossubidos':''
+                    'DistanciaCaminata':'0',
+                    'Pasos':'0',
+                    'Pisossubidos':'0'
                   },
                   Nutricion:{
-                    'AcidoFolico':'',
-                    'Agua':'',
-                    'AzucarEnDieta':'',
-                    'Biotona':'',
-                    'Cafeina':'',
-                    'Calcio':'',
-                    'Carbohidratos':'',
-                    'Cloro':'',
-                    'Cobre':'',
-                    'ColesterolEnDieta':'',
-                    'Cromo':''
+                    'AcidoFolico':'0',
+                    'Agua':'0',
+                    'AzucarEnDieta':'0',
+                    'Biotina':'0',
+                    'Cafeina':'0',
+                    'Calcio':'0',
+                    'Carbohidratos':'0',
+                    'Cloro':'0',
+                    'Cobre':'0',
+                    'ColesterolEnDieta':'0',
+                    'Cromo':'0'
                   },
                   Sueño:{
-                    'horas':''
+                    'horas':'0'
                   }
                 }
     }
@@ -122,6 +123,19 @@ class HealthUH{
     }
     return false;
   }
+
+
+
+  checkUser(user){
+    for (var i = 0; i < this.AppUsers.Users.length; i++) {
+        if(this.AppUsers.Users[i].user == user){
+          return true;
+        }
+    }
+    return false;
+  }
+
+
 
   UserLoggedGuard(){
     if(!this.isLogged){

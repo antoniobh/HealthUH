@@ -45,123 +45,79 @@
       </nav>
     </aside>
 
-    <div class="mainPanel">
-      <div class="app">
-        <div class="content">
-          <div class="container">
-  <div>
-    <img src="" class="profile-picture" alt="">
-  </div>
+          <div class="mainPanel">
+            <div class="app">
+              <div class="bg-banner nutrition-bg"></div>
+              <div class="content">
+                <div class="container">
 
-  <div class="row">
-    <div class="col-md-12">
-      <h4 class="mb-3">informacion Personal</h4>
-      <form>
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="firstName">Nombre</label>
-            <input type="text" class="form-control" id="firstName" placeholder="" value="" >
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="lastName">Apellidos</label>
-            <input type="text" class="form-control" id="lastName" placeholder="" value="" >
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="birthday">Fecha Nacimiento</label>
-            <input type="date" class="form-control" id="birthday" placeholder="" value="" >
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="blood">Grupo Sanguíneo</label>
-            <input type="text" class="form-control" id="blood" placeholder="" value="" >
-          </div>
+                  <div class="row" style="margin-top: 150px;">
+                    <div class="col-md-12">
+                      <form>
+                        <h4 class="mb-3">Nutricion</h4>
 
-          <div class="col-md-12 mb-6">
-            <label for="fritzpatrick">Escala FritzPatrick</label>
-            <select class="form-control mb-4" id="fritzpatrick">
-              <option>Tipo I</option>
-              <option>Tipo II</option>
-              <option>Tipo III</option>
-              <option>Tipo IV</option>
-              <option>Tipo V</option>
-            </select>
-          </div>
-        </div>
+                        <div class="row">
+                          <div class="col-md-2 mb-3">
+                            <label for="AF">Ácido Folico</label>
+                            <input type="text" class="form-control" id="AF" placeholder="" value="" >
+                          </div>
+                          <div class="col-md-2 mb-3">
+                            <label for="AG">Agua</label>
+                            <input type="text" class="form-control" id="AG" placeholder="" value="" >
+                          </div>
+                          <div class="col-md-2 mb-3">
+                            <label for="AZ">Azúcar</label>
+                            <input type="text" class="form-control" id="AZ" placeholder="" value="" >
+                          </div>
+                          <div class="col-md-2 mb-3">
+                            <label for="BT">Biotina</label>
+                            <input type="text" class="form-control" id="BT" placeholder="" value="" >
+                          </div>
+                          <div class="col-md-2 mb-3">
+                            <label for="CA">Cafeina</label>
+                            <input type="text" class="form-control" id="CA" placeholder="" value="" >
+                          </div>
+                          <div class="col-md-2 mb-3">
+                            <label for="CAL">Calcio</label>
+                            <input type="text" class="form-control" id="CAL" placeholder="" value="" >
+                          </div>
+                          <div class="col-md-2 mb-3">
+                            <label for="CH">Carbohidratos</label>
+                            <input type="text" class="form-control" id="CH" placeholder="" value="" >
+                          </div>
+                          <div class="col-md-2 mb-3">
+                            <label for="CL">Cloro</label>
+                            <input type="text" class="form-control" id="CL" placeholder="" value="" >
+                          </div>
+                          <div class="col-md-2 mb-3">
+                            <label for="CO">Cobre</label>
+                            <input type="text" class="form-control" id="CO" placeholder="" value="" >
+                          </div>
+                          <div class="col-md-2 mb-3">
+                            <label for="CED">Colesterol en dieta</label>
+                            <input type="text" class="form-control" id="CED" placeholder="" value="" >
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="CR">Cromo</label>
+                            <input type="text" class="form-control" id="CR" placeholder="" value="" >
+                          </div>
+                        </div>
 
+                        <hr class="mb-4">
 
-        <div class="row">
-          <div class="col-md-6 mb-1">
-            <h4 class="mb-3">Genero</h4>
-            <div class="d-block my-3">
-              <div class="custom-control custom-radio">
-                <input id="men" name="gener" type="radio" class="custom-control-input" >
-                <label class="custom-control-label" for="men">Hombre</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input id="women" name="gener" type="radio" class="custom-control-input">
-                <label class="custom-control-label" for="women">Mujer</label>
+                        <button id="save" class="btn btn-primary btn-lg btn-block" type="button">
+                          <div id="spinner-center">
+                            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                          </div>
+                          <span id="valueSpinner" >Actualizar informacion</span>
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
-          <div class="col-md-6 mb-1">
-            <h4 class="mb-3">Silla de ruedas</h4>
-            <div class="d-block my-3">
-              <div class="custom-control custom-radio">
-                <input id="needWheelchair" name="needWC" type="radio" class="custom-control-input">
-                <label class="custom-control-label" for="needWheelchair">Sí</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input id="noNeedWheelchair" name="needWC" type="radio" class="custom-control-input">
-                <label class="custom-control-label" for="noNeedWheelchair">No</label>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <hr class="mb-4">
-
-        <h4 class="mb-3">Medidas Corporales</h4>
-
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="height">Estatura</label>
-            <input type="text" class="form-control" id="height" placeholder="" value="" >
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="weight">Peso</label>
-            <input type="text" class="form-control" id="weight" placeholder="" value="" >
-          </div>
-
-          <div class="col-md-3 mb-3">
-            <label for="weight">Circunferencia de la cintura</label>
-            <input type="text" class="form-control" id="weight" placeholder="" value="" >
-          </div>
-
-          <div class="col-md-3 mb-3">
-            <label for="weight">Índice de masa corporal</label>
-            <input type="text" class="form-control" id="weight" placeholder="" value="" readonly>
-          </div>
-
-          <div class="col-md-3 mb-3">
-            <label for="weight">Masa coporal Magra</label>
-            <input type="text" class="form-control" id="weight" placeholder="" value="" readonly>
-          </div>
-
-
-          <div class="col-md-3 mb-3">
-            <label for="weight">Porcentaje de Grasa corporal</label>
-            <input type="text" class="form-control" id="weight" placeholder="" value="" readonly>
-          </div>
-        </div>
-
-        <button class="btn btn-primary btn-lg btn-block" type="button">Actualizar informacion</button>
-      </form>
-    </div>
-  </div>
-</div>
-        </div>
-      </div>
-    </div>
 
 
   </main>

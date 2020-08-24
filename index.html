@@ -19,13 +19,20 @@
             <img src="./assets/images/8061.png" class="picture-center" alt="" width="70px">
             <div class="form-group">
               <label for="userInput">Usuario</label>
-              <input type="text" class="form-control" id="userInput" aria-describedby="emailHelp" placeholder="Usuario">
+              <input type="text" class="form-control" id="userInput" aria-describedby="emailHelp" placeholder="Cedula">
             </div>
             <div class="form-group">
               <label for="passwordInput">Contraseña</label>
               <input type="password" class="form-control" id="passwordInput" placeholder="Contraseña">
             </div>
-            <button id="btnLogin" type="button" class="btn theme-btn">Ingresar</button>
+
+
+            <button id="btnLogin" type="button" class="btn theme-btn login">Ingresar</button>
+            <button id="btnregister" type="button" class="btn theme-btn register">Registrarse</button>
+            <a href="#" id="showLogin" class="btn btn-link register">Ingresar</a>
+            <a href="#" id="showRegister" class="btn btn-link login">Crear usuario nuevo</a>
+
+            <p id="labelError"></p>
           </form>
         </div>
         <div class="col-md-8">

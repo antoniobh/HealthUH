@@ -9,6 +9,19 @@
   right: 0;
 }
 
+#labelError{
+  position: relative;
+  background: #FF0040;
+  margin: 8px auto;
+  text-align: center;
+  border-radius: 4px;
+  color: white;
+  padding: 6px;
+  display: none;
+}
+
+.login{display: block;}
+.register{display: none;}
 
 .theme-center{
   display: flex;

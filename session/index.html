@@ -56,7 +56,7 @@
                 <form>
 
                   <div class="text-center">
-                    <input type="file" id="profilePicture" name="profilePicture" onchange="showPreview()" accept="image/*" class="profile-selectPicture">
+                    <input type="file" id="profilePicture" name="profilePicture" accept="image/*" class="profile-selectPicture">
                     <div class="imgProfile rounderBorder">
                       <img id="pictureSelectedView" src="../assets/images/user.svg" class="rounded mb-5" alt="...">
                     </div>
@@ -139,28 +139,33 @@
                     </div>
 
                     <div class="col-md-3 mb-3">
-                      <label for="weight">Circunferencia de la cintura</label>
-                      <input type="text" class="form-control" id="weight" placeholder="" value="" >
+                      <label for="CDC">Circunferencia de la cintura</label>
+                      <input type="text" class="form-control" id="CDC" placeholder="" value="" >
                     </div>
 
                     <div class="col-md-3 mb-3">
-                      <label for="weight">Índice de masa corporal</label>
-                      <input type="text" class="form-control" id="weight" placeholder="" value="" readonly>
+                      <label for="IMC">Índice de masa corporal</label>
+                      <input type="text" class="form-control" id="IMC" placeholder="" value="" readonly>
                     </div>
 
                     <div class="col-md-3 mb-3">
-                      <label for="weight">Masa coporal Magra</label>
-                      <input type="text" class="form-control" id="weight" placeholder="" value="" readonly>
+                      <label for="MCM">Masa coporal Magra</label>
+                      <input type="text" class="form-control" id="MCM" placeholder="" value="" readonly>
                     </div>
 
 
                     <div class="col-md-3 mb-3">
-                      <label for="weight">Porcentaje de Grasa corporal</label>
-                      <input type="text" class="form-control" id="weight" placeholder="" value="" readonly>
+                      <label for="PGC">Porcentaje de Grasa corporal</label>
+                      <input type="text" class="form-control" id="PGC" placeholder="" value="" readonly>
                     </div>
                   </div>
 
-                  <button id="save" class="btn btn-primary btn-lg btn-block" type="button">Actualizar informacion</button>
+                  <button id="save" class="btn btn-primary btn-lg btn-block" type="button">
+                    <div id="spinner-center">
+                      <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                    </div>
+                    <span id="valueSpinner" >Actualizar informacion</span>
+                  </button>
                 </form>
               </div>
             </div>
